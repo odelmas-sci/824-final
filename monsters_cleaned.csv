@@ -1,0 +1,325 @@
+"","name","size","monster_type","alignment","ac","hp","strength","dex","con","intel","wis","cha","speed","language","legendary","cr"
+"1","Aboleth","Large","Aberration","Lawful Evil",17,135,21,9,15,18,15,18,10,1,1,10
+"2","Acolyte","Medium","Humanoid (any race)","Any",10,9,10,10,10,10,14,11,30,1,0,0.25
+"3","Adult Black Dragon","Huge","Dragon","Chaotic Evil",19,195,23,14,21,14,13,17,40,1,1,14
+"4","Adult Blue Dragon","Huge","Dragon","Lawful Evil",19,225,25,10,23,16,15,19,40,1,1,16
+"5","Adult Brass Dragon","Huge","Dragon","Chaotic Good",18,172,23,10,21,14,13,17,40,1,1,13
+"6","Adult Bronze Dragon","Huge","Dragon","Lawful Good",19,212,25,10,23,16,15,19,40,1,1,15
+"7","Adult Copper Dragon","Huge","Dragon","Chaotic Good",18,184,23,12,21,18,15,17,40,1,1,14
+"8","Adult Gold Dragon","Huge","Dragon","Lawful Good",19,256,27,14,25,16,15,24,40,1,1,17
+"9","Adult Green Dragon","Huge","Dragon","Lawful Evil",19,207,23,12,21,18,15,17,40,1,1,15
+"10","Adult Red Dragon","Huge","Dragon","Chaotic Evil",19,256,27,10,25,16,13,21,40,1,1,17
+"11","Adult Silver Dragon","Huge","Dragon","Lawful Good",19,243,27,10,25,16,13,21,40,1,1,16
+"12","Adult White Dragon","Huge","Dragon","Chaotic Evil",18,200,22,10,22,8,12,12,40,1,1,13
+"13","Air Elemental","Large","Elemental","True Neutral",15,90,14,20,14,6,10,6,0,1,0,5
+"14","Ancient Black Dragon","Gargantuan","Dragon","Chaotic Evil",22,367,27,14,25,16,15,19,40,1,1,21
+"15","Ancient Blue Dragon","Gargantuan","Dragon","Lawful Evil",22,481,29,10,27,18,17,21,40,1,1,23
+"16","Ancient Brass Dragon","Gargantuan","Dragon","Chaotic Good",20,297,27,10,25,16,15,19,40,1,1,20
+"17","Ancient Bronze Dragon","Gargantuan","Dragon","Lawful Good",22,444,29,10,27,18,17,21,40,1,1,22
+"18","Ancient Copper Dragon","Gargantuan","Dragon","Chaotic Good",21,350,27,12,25,20,17,19,40,1,1,21
+"19","Ancient Gold Dragon","Gargantuan","Dragon","Lawful Good",22,546,30,14,29,18,17,28,40,1,1,24
+"20","Ancient Green Dragon","Gargantuan","Dragon","Lawful Evil",21,385,27,12,25,20,17,19,40,1,1,22
+"21","Ancient Red Dragon","Gargantuan","Dragon","Chaotic Evil",22,546,30,10,29,18,15,23,40,1,1,24
+"22","Ancient Silver Dragon","Gargantuan","Dragon","Lawful Good",22,487,30,10,29,18,15,23,40,1,1,23
+"23","Ancient White Dragon","Gargantuan","Dragon","Chaotic Evil",20,333,26,10,26,10,13,14,40,1,1,20
+"24","Androsphinx","Large","Monstrosity","Lawful Neutral",17,199,22,10,20,16,18,23,40,1,1,17
+"25","Animated Armor","Medium","Construct","Unaligned",18,33,14,11,13,1,3,1,25,0,0,1
+"26","Ankheg","Large","Monstrosity","Unaligned",14,39,17,11,13,1,13,6,30,0,0,2
+"27","Ape","Medium","Beast","Unaligned",12,19,16,14,14,6,12,7,30,0,0,0.5
+"28","Archmage","Medium","Humanoid (any race)","Any",12,99,10,14,12,20,15,16,30,1,0,12
+"29","Assassin","Medium","Humanoid (any race)","Non-Good",15,78,11,16,14,13,11,10,30,1,0,8
+"30","Awakened Shrub","Small","Plant","Unaligned",9,10,3,8,11,10,10,6,20,1,0,0
+"31","Awakened Tree","Huge","Plant","Unaligned",13,59,19,6,15,10,10,7,20,1,0,2
+"32","Axe Beak","Large","Beast","Unaligned",11,19,14,12,12,2,10,5,50,0,0,0.25
+"33","Azer","Medium","Elemental","Lawful Neutral",17,39,17,12,15,12,13,10,30,1,0,2
+"34","Baboon","Small","Beast","Unaligned",12,3,8,14,11,4,12,6,30,0,0,0
+"35","Badger","Tiny","Beast","Unaligned",10,3,4,11,12,2,12,5,20,0,0,0
+"36","Balor","Huge","Fiend (demon)","Chaotic Evil",19,262,26,15,22,20,16,22,40,1,0,19
+"37","Bandit","Medium","Humanoid (any race)","Non-Lawful",12,11,11,12,12,10,10,10,30,1,0,0.125
+"38","Bandit Captain","Medium","Humanoid (any race)","Non-Lawful",15,65,15,16,14,14,11,14,30,1,0,2
+"39","Barbed Devil","Medium","Fiend (devil)","Lawful Evil",15,110,16,17,18,12,14,14,30,1,0,5
+"40","Basilisk","Medium","Monstrosity","Unaligned",15,52,16,8,15,2,8,7,20,0,0,3
+"41","Bat","Tiny","Beast","Unaligned",12,1,2,15,8,2,12,4,5,0,0,0
+"42","Bearded Devil","Medium","Fiend (devil)","Lawful Evil",13,52,16,15,15,9,11,11,30,1,0,3
+"43","Behir","Huge","Monstrosity","Neutral Evil",17,168,23,16,18,7,14,12,50,1,0,11
+"44","Berserker","Medium","Humanoid (any race)","Chaotic (unspecified)",13,67,16,12,17,9,11,9,30,1,0,2
+"45","Black Bear","Medium","Beast","Unaligned",11,19,15,10,14,2,12,7,40,0,0,0.5
+"46","Black Dragon Wyrmling","Medium","Dragon","Chaotic Evil",17,33,15,14,13,10,11,13,30,1,0,2
+"47","Black Pudding","Large","Ooze","Unaligned",7,85,16,5,16,1,6,1,20,0,0,4
+"48","Blink Dog","Medium","Fey","Lawful Good",13,22,12,17,12,10,13,11,40,1,0,0.25
+"49","Blood Hawk","Small","Beast","Unaligned",12,7,6,14,10,3,14,5,10,0,0,0.125
+"50","Blue Dragon Wyrmling","Medium","Dragon","Lawful Evil",17,52,17,10,15,12,11,15,30,1,0,3
+"51","Boar","Medium","Beast","Unaligned",11,11,13,11,12,2,9,5,40,0,0,0.25
+"52","Bone Devil","Large","Fiend (devil)","Lawful Evil",19,142,18,16,18,13,14,16,40,1,0,9
+"53","Brass Dragon Wyrmling","Medium","Dragon","Chaotic Good",16,16,15,10,13,10,11,13,30,1,0,1
+"54","Bronze Dragon Wyrmling","Medium","Dragon","Lawful Good",17,32,17,10,15,12,11,15,30,1,0,2
+"55","Brown Bear","Large","Beast","Unaligned",11,34,19,10,16,2,13,7,40,0,0,1
+"56","Bugbear","Medium","Humanoid (goblinoid)","Chaotic Evil",16,27,15,14,13,8,11,9,30,1,0,1
+"57","Bulette","Large","Monstrosity","Unaligned",17,94,19,11,21,2,10,5,40,0,0,5
+"58","Camel","Large","Beast","Unaligned",9,15,16,8,14,2,8,5,50,0,0,0.125
+"59","Cat","Tiny","Beast","Unaligned",12,2,3,15,10,3,12,7,40,0,0,0
+"60","Centaur","Large","Monstrosity","Neutral Good",12,45,18,14,14,9,13,11,50,1,0,2
+"61","Chain Devil","Medium","Fiend (devil)","Lawful Evil",16,85,18,15,18,11,12,14,30,1,0,8
+"62","Chimera","Large","Monstrosity","Chaotic Evil",14,114,19,11,19,3,14,10,30,1,0,6
+"63","Chuul","Large","Aberration","Chaotic Evil",16,93,19,10,16,5,11,5,30,1,0,4
+"64","Clay Golem","Large","Construct","Unaligned",14,133,20,9,18,3,8,1,20,1,0,9
+"65","Cloaker","Large","Aberration","Chaotic Neutral",14,78,17,15,12,13,12,14,10,1,0,8
+"66","Cloud Giant","Huge","Giant","Neutral (Good or Evil)",14,200,27,10,22,12,16,16,40,1,0,9
+"67","Cockatrice","Small","Monstrosity","Unaligned",11,27,6,12,12,2,13,5,20,0,0,0.5
+"68","Commoner","Medium","Humanoid (any race)","Any",10,4,10,10,10,10,10,10,30,1,0,0
+"69","Constrictor Snake","Large","Beast","Unaligned",12,13,15,14,12,1,10,3,30,0,0,0.25
+"70","Copper Dragon Wyrmling","Medium","Dragon","Chaotic Good",16,22,15,12,13,14,11,13,30,1,0,1
+"71","Couatl","Medium","Celestial","Lawful Good",19,97,16,20,17,18,20,18,30,1,0,4
+"72","Crab","Tiny","Beast","Unaligned",11,2,2,11,10,1,8,2,20,0,0,0
+"73","Crocodile","Large","Beast","Unaligned",12,19,15,10,13,2,10,5,20,0,0,0.5
+"74","Cult Fanatic","Medium","Humanoid (any race)","Non-Good",13,33,11,14,12,10,13,14,30,1,0,2
+"75","Cultist","Medium","Humanoid (any race)","Non-Good",12,9,11,12,10,10,11,10,30,1,0,0.125
+"76","Darkmantle","Small","Monstrosity","Unaligned",11,22,16,12,13,2,10,5,10,0,0,0.5
+"77","Death Dog","Medium","Monstrosity","Neutral Evil",12,39,15,14,14,3,13,6,40,0,0,1
+"78","Deep Gnome (Svirfneblin)","Small","Humanoid (gnome)","Neutral Good",15,16,15,14,14,12,10,9,20,1,0,0.5
+"79","Deer","Medium","Beast","Unaligned",13,4,11,16,11,2,14,5,50,0,0,0
+"80","Deva","Medium","Celestial","Lawful Good",17,136,18,18,18,17,20,20,30,1,0,10
+"81","Dire Wolf","Large","Beast","Unaligned",14,37,17,15,15,3,12,7,50,0,0,1
+"82","Diseased Giant Rat","Small","Beast","Unaligned",12,7,7,15,11,2,10,4,30,0,0,0.125
+"83","Djinni","Large","Elemental","Chaotic Good",17,161,21,15,22,15,16,20,30,1,0,11
+"84","Doppelganger","Medium","Monstrosity (shapechanger)","Unaligned",14,52,11,18,14,11,12,14,30,1,0,3
+"85","Draft Horse","Large","Beast","Unaligned",10,19,18,10,12,2,11,7,40,0,0,0.25
+"86","Dragon Turtle","Gargantuan","Dragon","True Neutral",20,341,25,10,20,10,12,12,20,1,0,17
+"87","Dretch","Small","Fiend (demon)","Chaotic Evil",11,18,11,11,12,5,8,3,20,1,0,0.25
+"88","Drider","Large","Monstrosity","Chaotic Evil",19,123,16,16,18,13,14,12,30,1,0,6
+"89","Drow","Medium","Humanoid (elf)","Neutral Evil",15,13,10,14,10,11,11,12,30,1,0,0.25
+"90","Druid","Medium","Humanoid (any race)","Any",11,27,10,12,13,12,15,11,30,1,0,2
+"91","Dryad","Medium","Fey","True Neutral",11,22,10,12,11,14,15,18,30,1,0,1
+"92","Duergar","Medium","Humanoid (dwarf)","Lawful Evil",16,26,14,11,14,11,10,9,25,1,0,1
+"93","Dust Mephit","Small","Elemental","Neutral Evil",12,17,5,14,10,9,11,10,30,1,0,0.5
+"94","Eagle","Small","Beast","Unaligned",12,3,6,15,10,2,14,7,10,0,0,0
+"95","Earth Elemental","Large","Elemental","True Neutral",17,126,20,8,20,5,10,5,30,1,0,5
+"96","Efreeti","Large","Elemental","Lawful Evil",17,200,22,12,24,16,15,16,40,1,0,11
+"97","Elephant","Huge","Beast","Unaligned",12,76,22,9,17,3,11,6,40,0,0,4
+"98","Elk","Large","Beast","Unaligned",10,13,16,10,12,2,10,6,50,0,0,0.25
+"99","Erinyes","Medium","Fiend (devil)","Lawful Evil",18,153,18,16,18,14,14,18,30,1,0,12
+"100","Ettercap","Medium","Monstrosity","Neutral Evil",13,44,14,15,13,7,12,8,30,0,0,2
+"101","Ettin","Large","Giant","Chaotic Evil",12,85,21,8,17,6,10,8,40,1,0,4
+"102","Fire Elemental","Large","Elemental","True Neutral",13,102,10,17,16,6,10,7,50,1,0,5
+"103","Fire Giant","Huge","Giant","Lawful Evil",18,162,25,9,23,10,14,13,30,1,0,9
+"104","Flesh Golem","Medium","Construct","True Neutral",9,93,19,9,18,6,10,5,30,1,0,5
+"105","Flying Snake","Tiny","Beast","Unaligned",14,5,4,18,11,2,12,5,30,0,0,0.125
+"106","Flying Sword","Small","Construct","Unaligned",17,17,12,15,11,1,5,1,0,0,0,0.25
+"107","Frog","Tiny","Beast","Unaligned",11,1,1,13,8,1,8,3,20,0,0,0
+"108","Frost Giant","Huge","Giant","Neutral Evil",15,138,23,9,21,9,10,12,40,1,0,8
+"109","Gargoyle","Medium","Elemental","Chaotic Evil",15,52,15,11,16,6,11,7,30,1,0,2
+"110","Gelatinous Cube","Large","Ooze","Unaligned",6,84,14,3,20,1,6,1,15,0,0,2
+"111","Ghast","Medium","Undead","Chaotic Evil",13,36,16,17,10,11,10,8,30,1,0,2
+"112","Ghost","Medium","Undead","Any",11,45,7,13,10,10,12,17,0,1,0,4
+"113","Ghoul","Medium","Undead","Chaotic Evil",12,22,13,15,10,7,10,6,30,1,0,1
+"114","Giant Ape","Huge","Beast","Unaligned",12,157,23,14,18,7,12,7,40,0,0,7
+"115","Giant Badger","Medium","Beast","Unaligned",10,13,13,10,15,2,12,5,30,0,0,0.25
+"116","Giant Bat","Large","Beast","Unaligned",13,22,15,16,11,2,12,6,10,0,0,0.25
+"117","Giant Boar","Large","Beast","Unaligned",12,42,17,10,16,2,7,5,40,0,0,2
+"118","Giant Centipede","Small","Beast","Unaligned",13,4,5,14,12,1,7,3,30,0,0,0.25
+"119","Giant Constrictor Snake","Huge","Beast","Unaligned",12,60,19,14,12,1,10,3,30,0,0,2
+"120","Giant Crab","Medium","Beast","Unaligned",15,13,13,15,11,1,9,3,30,0,0,0.125
+"121","Giant Crocodile","Huge","Beast","Unaligned",14,85,21,9,17,2,10,7,30,0,0,5
+"122","Giant Eagle","Large","Beast","Neutral Good",13,26,16,17,13,8,14,10,10,1,0,1
+"123","Giant Elk","Huge","Beast","Unaligned",14,42,19,16,14,7,14,10,60,1,0,2
+"124","Giant Fire Beetle","Small","Beast","Unaligned",13,4,8,10,12,1,7,3,30,0,0,0
+"125","Giant Frog","Medium","Beast","Unaligned",11,18,12,13,11,2,10,3,30,0,0,0.25
+"126","Giant Goat","Large","Beast","Unaligned",11,19,17,11,12,3,12,6,40,0,0,0.5
+"127","Giant Hyena","Large","Beast","Unaligned",12,45,16,14,14,2,12,7,50,0,0,1
+"128","Giant Lizard","Large","Beast","Unaligned",12,19,15,12,13,2,10,5,30,0,0,0.25
+"129","Giant Octopus","Large","Beast","Unaligned",11,52,17,13,13,4,10,4,10,0,0,1
+"130","Giant Owl","Large","Beast","True Neutral",12,19,13,15,12,8,13,10,5,1,0,0.25
+"131","Giant Poisonous Snake","Medium","Beast","Unaligned",14,11,10,18,13,2,10,3,30,0,0,0.25
+"132","Giant Rat","Small","Beast","Unaligned",12,7,7,15,11,2,10,4,30,0,0,0.125
+"133","Giant Scorpion","Large","Beast","Unaligned",15,52,15,13,15,1,9,3,40,0,0,3
+"134","Giant Sea Horse","Large","Beast","Unaligned",13,16,12,15,11,2,12,5,0,0,0,0.5
+"135","Giant Shark","Huge","Beast","Unaligned",13,126,23,11,21,1,10,5,40,0,0,5
+"136","Giant Spider","Large","Beast","Unaligned",14,26,14,16,12,2,11,4,30,0,0,1
+"137","Giant Toad","Large","Beast","Unaligned",11,39,15,13,13,2,10,3,20,0,0,1
+"138","Giant Vulture","Large","Beast","Neutral Evil",10,22,15,10,15,6,12,7,10,1,0,1
+"139","Giant Wasp","Medium","Beast","Unaligned",12,13,10,14,10,1,10,3,10,0,0,0.5
+"140","Giant Weasel","Medium","Beast","Unaligned",13,9,11,16,10,4,12,5,40,0,0,0.125
+"141","Giant Wolf Spider","Medium","Beast","Unaligned",13,11,12,16,13,3,12,4,40,0,0,0.25
+"142","Gibbering Mouther","Medium","Aberration","True Neutral",9,67,10,8,16,3,10,6,10,0,0,2
+"143","Glabrezu","Large","Fiend (demon)","Chaotic Evil",17,157,20,15,21,19,17,16,40,1,0,9
+"144","Gladiator","Medium","Humanoid (any race)","Any",16,112,18,15,16,10,12,15,30,1,0,5
+"145","Gnoll","Medium","Humanoid (gnoll)","Chaotic Evil",15,22,14,12,11,6,10,7,30,1,0,0.5
+"146","Goat","Medium","Beast","Unaligned",10,4,12,10,11,2,10,5,40,0,0,0
+"147","Goblin","Small","Humanoid (goblinoid)","Neutral Evil",15,7,8,14,10,10,8,8,30,1,0,0.25
+"148","Gold Dragon Wyrmling","Medium","Dragon","Lawful Good",17,60,19,14,17,14,11,16,30,1,0,3
+"149","Gorgon","Large","Monstrosity","Unaligned",19,114,20,11,18,2,12,7,40,0,0,5
+"150","Gray Ooze","Medium","Ooze","Unaligned",8,22,12,6,16,1,6,2,10,0,0,0.5
+"151","Green Dragon Wyrmling","Medium","Dragon","Lawful Evil",17,38,15,12,13,14,11,13,30,1,0,2
+"152","Green Hag","Medium","Fey","Neutral Evil",17,82,18,12,16,13,14,14,30,1,0,3
+"153","Grick","Medium","Monstrosity","True Neutral",14,27,14,14,11,3,14,5,30,0,0,2
+"154","Griffon","Large","Monstrosity","Unaligned",12,59,18,15,16,2,13,8,30,0,0,2
+"155","Grimlock","Medium","Humanoid (grimlock)","Neutral Evil",11,11,16,12,12,9,8,6,30,1,0,0.25
+"156","Guard","Medium","Humanoid (any race)","Any",16,11,13,12,12,10,11,10,30,1,0,0.125
+"157","Guardian Naga","Large","Monstrosity","Lawful Good",18,127,19,18,16,16,19,18,40,1,0,10
+"158","Gynosphinx","Large","Monstrosity","Lawful Neutral",17,136,18,15,16,18,18,18,40,1,1,11
+"159","Half-Red Dragon Veteran","Medium","Humanoid (human)","Any",18,65,16,13,14,10,11,10,30,1,0,5
+"160","Harpy","Medium","Monstrosity","Chaotic Evil",11,38,12,13,12,7,10,13,20,1,0,1
+"161","Hawk","Tiny","Beast","Unaligned",13,1,5,16,8,2,14,6,10,0,0,0
+"162","Hell Hound","Medium","Fiend","Lawful Evil",15,45,17,12,14,6,13,6,50,1,0,3
+"163","Hezrou","Large","Fiend (demon)","Chaotic Evil",16,136,19,17,20,5,12,13,30,1,0,8
+"164","Hill Giant","Huge","Giant","Chaotic Evil",13,105,21,8,19,5,9,6,40,1,0,5
+"165","Hippogriff","Large","Monstrosity","Unaligned",11,19,17,13,13,2,12,8,40,0,0,1
+"166","Hobgoblin","Medium","Humanoid (goblinoid)","Lawful Evil",18,11,13,12,12,10,10,9,30,1,0,0.5
+"167","Homunculus","Tiny","Construct","True Neutral",13,5,4,15,11,10,10,7,20,1,0,0
+"168","Horned Devil","Large","Fiend (devil)","Lawful Evil",18,178,22,17,21,12,16,17,20,1,0,11
+"169","Hunter Shark","Large","Beast","Unaligned",12,45,18,13,15,1,10,4,60,0,0,2
+"170","Hydra","Huge","Monstrosity","Unaligned",15,172,20,12,20,2,10,7,30,0,0,8
+"171","Hyena","Medium","Beast","Unaligned",11,5,11,13,12,2,12,5,50,0,0,0
+"172","Ice Devil","Large","Fiend (devil)","Lawful Evil",18,180,21,14,18,18,15,18,40,1,0,14
+"173","Ice Mephit","Small","Elemental","Neutral Evil",11,21,7,13,10,9,11,12,30,1,0,0.5
+"174","Imp","Tiny","Fiend (devil)","Lawful Evil",13,10,6,17,13,11,12,14,20,1,0,1
+"175","Incubus","Medium","Fiend (shapechanger)","Neutral Evil",15,66,8,17,13,15,12,20,30,1,0,4
+"176","Invisible Stalker","Medium","Elemental","True Neutral",14,104,16,19,14,10,15,11,50,1,0,6
+"177","Iron Golem","Large","Construct","Unaligned",20,210,24,9,20,3,11,1,30,1,0,16
+"178","Jackal","Small","Beast","Unaligned",12,3,8,15,11,3,12,6,40,0,0,0
+"179","Killer Whale","Huge","Beast","Unaligned",12,90,19,10,13,3,12,7,40,0,0,3
+"180","Knight","Medium","Humanoid (any race)","Any",18,52,16,11,14,11,11,15,30,1,0,3
+"181","Kobold","Small","Humanoid (kobold)","Lawful Evil",12,5,7,15,9,8,7,8,30,1,0,0.125
+"182","Kraken","Gargantuan","Monstrosity (titan)","Chaotic Evil",18,472,30,11,25,22,18,20,20,1,1,23
+"183","Lamia","Large","Monstrosity","Chaotic Evil",13,97,16,13,15,14,15,16,30,1,0,4
+"184","Lemure","Medium","Fiend (devil)","Lawful Evil",7,13,10,5,11,1,11,3,15,1,0,0
+"185","Lich","Medium","Undead","Evil (unspecified)",17,135,11,16,16,20,14,16,30,1,1,21
+"186","Lion","Large","Beast","Unaligned",12,26,17,15,13,3,12,8,50,0,0,1
+"187","Lizard","Tiny","Beast","Unaligned",10,2,2,11,10,1,8,3,20,0,0,0
+"188","Lizardfolk","Medium","Humanoid (lizardfolk)","True Neutral",15,22,15,10,13,7,12,7,30,1,0,0.5
+"189","Mage","Medium","Humanoid (any race)","Any",12,40,9,14,11,17,12,11,30,1,0,6
+"190","Magma Mephit","Small","Elemental","Neutral Evil",11,22,8,12,12,7,10,10,30,1,0,0.5
+"191","Magmin","Small","Elemental","Chaotic Neutral",14,9,7,15,12,8,11,10,30,1,0,0.5
+"192","Mammoth","Huge","Beast","Unaligned",13,126,24,9,21,3,11,6,40,0,0,6
+"193","Manticore","Large","Monstrosity","Lawful Evil",14,68,17,16,17,7,12,8,30,1,0,3
+"194","Marilith","Large","Fiend (demon)","Chaotic Evil",18,189,18,20,20,18,16,20,40,1,0,16
+"195","Mastiff","Medium","Beast","Unaligned",12,5,13,14,12,3,12,7,40,0,0,0.125
+"196","Medusa","Medium","Monstrosity","Lawful Evil",15,127,10,15,16,12,13,15,30,1,0,6
+"197","Merfolk","Medium","Humanoid (merfolk)","True Neutral",11,11,10,13,12,11,11,12,10,1,0,0.125
+"198","Merrow","Large","Monstrosity","Chaotic Evil",13,45,18,10,15,8,10,9,10,1,0,2
+"199","Mimic","Medium","Monstrosity (shapechanger)","True Neutral",12,58,17,12,15,5,13,8,15,0,0,2
+"200","Minotaur","Large","Monstrosity","Chaotic Evil",14,76,18,11,16,6,16,9,40,1,0,3
+"201","Minotaur Skeleton","Large","Undead","Lawful Evil",12,67,18,11,15,6,8,5,40,1,0,2
+"202","Mule","Medium","Beast","Unaligned",10,11,14,10,13,2,10,5,40,0,0,0.125
+"203","Mummy","Medium","Undead","Lawful Evil",11,58,16,8,15,6,10,12,20,1,0,3
+"204","Mummy Lord","Medium","Undead","Lawful Evil",17,97,18,10,17,11,18,16,20,1,1,15
+"205","Nalfeshnee","Large","Fiend (demon)","Chaotic Evil",18,184,21,10,22,19,12,15,20,1,0,13
+"206","Night Hag","Medium","Fiend","Neutral Evil",17,112,18,15,16,16,14,16,30,1,0,5
+"207","Nightmare","Large","Fiend","Neutral Evil",13,68,18,15,16,10,13,15,60,1,0,3
+"208","Noble","Medium","Humanoid (any race)","Any",15,9,11,12,11,12,14,16,30,1,0,0.125
+"209","Ochre Jelly","Large","Ooze","Unaligned",8,45,15,6,14,2,6,1,10,0,0,2
+"210","Octopus","Small","Beast","Unaligned",12,3,4,15,11,3,10,4,5,0,0,0
+"211","Ogre","Large","Giant","Chaotic Evil",11,59,19,8,16,5,7,7,40,1,0,2
+"212","Ogre Zombie","Large","Undead","Neutral Evil",8,85,19,6,18,3,6,5,30,1,0,2
+"213","Oni","Large","Giant","Lawful Evil",16,110,19,11,16,14,12,15,30,1,0,7
+"214","Orc","Medium","Humanoid (orc)","Chaotic Evil",13,15,16,12,16,7,11,10,30,1,0,0.5
+"215","Otyugh","Large","Aberration","True Neutral",14,114,16,11,19,6,13,6,30,1,0,5
+"216","Owl","Tiny","Beast","Unaligned",11,1,3,13,8,2,12,7,5,0,0,0
+"217","Owlbear","Large","Monstrosity","Unaligned",13,59,20,12,17,3,12,7,40,0,0,3
+"218","Panther","Medium","Beast","Unaligned",12,13,14,15,10,3,14,7,50,0,0,0.25
+"219","Pegasus","Large","Celestial","Chaotic Good",12,59,18,15,16,10,15,13,60,1,0,2
+"220","Phase Spider","Large","Monstrosity","Unaligned",13,32,15,15,12,6,10,6,30,0,0,3
+"221","Pit Fiend","Large","Fiend (devil)","Lawful Evil",19,300,26,14,24,22,18,24,30,1,0,20
+"222","Planetar","Large","Celestial","Lawful Good",19,200,24,20,24,19,22,25,40,1,0,16
+"223","Plesiosaurus","Large","Beast","Unaligned",13,68,18,15,16,2,12,5,20,0,0,2
+"224","Poisonous Snake","Tiny","Beast","Unaligned",13,2,2,16,11,1,10,3,30,0,0,0.125
+"225","Polar Bear","Large","Beast","Unaligned",12,42,20,10,16,2,13,7,40,0,0,2
+"226","Pony","Medium","Beast","Unaligned",10,11,15,10,13,2,11,7,40,0,0,0.125
+"227","Priest","Medium","Humanoid (any race)","Any",13,27,10,10,12,13,16,13,25,1,0,2
+"228","Pseudodragon","Tiny","Dragon","Neutral Good",13,7,6,15,13,10,12,10,15,1,0,0.25
+"229","Purple Worm","Gargantuan","Monstrosity","Unaligned",18,247,28,7,22,1,8,4,50,0,0,15
+"230","Quasit","Tiny","Fiend (demon)","Chaotic Evil",13,7,5,17,10,7,10,10,40,1,0,1
+"231","Quipper","Tiny","Beast","Unaligned",13,1,2,16,9,1,7,2,40,0,0,0
+"232","Rakshasa","Medium","Fiend","Lawful Evil",16,110,14,17,18,13,16,20,40,1,0,13
+"233","Rat","Tiny","Beast","Unaligned",10,1,2,11,9,2,10,4,20,0,0,0
+"234","Raven","Tiny","Beast","Unaligned",12,1,2,14,8,2,12,6,10,0,0,0
+"235","Red Dragon Wyrmling","Medium","Dragon","Chaotic Evil",17,75,19,10,17,12,11,15,30,1,0,4
+"236","Reef Shark","Medium","Beast","Unaligned",12,22,14,13,13,1,10,4,30,0,0,0.5
+"237","Remorhaz","Huge","Monstrosity","Unaligned",17,195,24,13,21,4,10,5,30,0,0,11
+"238","Rhinoceros","Large","Beast","Unaligned",11,45,21,8,15,2,12,6,40,0,0,2
+"239","Riding Horse","Large","Beast","Unaligned",10,13,16,10,12,2,11,7,60,0,0,0.25
+"240","Roc","Gargantuan","Monstrosity","Unaligned",15,248,28,10,20,3,10,9,20,0,0,11
+"241","Roper","Large","Monstrosity","Neutral Evil",20,93,18,8,17,7,16,6,10,0,0,5
+"242","Rug Of Smothering","Large","Construct","Unaligned",12,33,17,14,10,1,3,1,10,0,0,2
+"243","Rust Monster","Medium","Monstrosity","Unaligned",14,27,13,12,13,2,13,6,40,0,0,0.5
+"244","Saber-Toothed Tiger","Large","Beast","Unaligned",12,52,18,14,15,3,12,8,40,0,0,2
+"245","Sahuagin","Medium","Humanoid (sahuagin)","Lawful Evil",12,22,13,11,12,12,13,9,30,1,0,0.5
+"246","Salamander","Large","Elemental","Neutral Evil",15,90,18,14,15,11,10,12,30,1,0,5
+"247","Satyr","Medium","Fey","Chaotic Neutral",14,31,12,16,11,12,10,14,40,1,0,0.5
+"248","Scorpion","Tiny","Beast","Unaligned",11,1,2,11,8,1,8,2,10,0,0,0
+"249","Scout","Medium","Humanoid (any race)","Any",13,16,11,14,12,11,13,11,30,1,0,0.5
+"250","Sea Hag","Medium","Fey","Chaotic Evil",14,52,16,13,16,12,12,13,30,1,0,2
+"251","Sea Horse","Tiny","Beast","Unaligned",11,1,1,12,8,1,10,2,40,0,0,0
+"252","Shadow","Medium","Undead","Chaotic Evil",12,16,6,14,13,6,10,8,40,0,0,0.5
+"253","Shambling Mound","Large","Plant","Unaligned",15,136,18,8,16,5,10,5,20,0,0,5
+"254","Shield Guardian","Large","Construct","Unaligned",17,142,18,8,18,7,10,3,30,1,0,7
+"255","Shrieker","Medium","Plant","Unaligned",5,13,1,1,10,1,3,1,0,0,0,0
+"256","Silver Dragon Wyrmling","Medium","Dragon","Lawful Good",17,45,19,10,17,12,11,15,30,1,0,2
+"257","Skeleton","Medium","Undead","Lawful Evil",13,13,10,14,15,6,8,5,30,1,0,0.25
+"258","Solar","Large","Celestial","Lawful Good",21,243,26,22,26,25,25,30,50,1,1,21
+"259","Specter","Medium","Undead","Chaotic Evil",12,22,1,14,11,10,10,11,0,1,0,1
+"260","Spider","Tiny","Beast","Unaligned",12,1,2,14,8,1,10,2,20,0,0,0
+"261","Spirit Naga","Large","Monstrosity","Chaotic Evil",15,75,18,17,14,16,15,16,40,1,0,8
+"262","Sprite","Tiny","Fey","Neutral Good",15,2,3,18,10,14,13,11,10,1,0,0.25
+"263","Spy","Medium","Humanoid (any race)","Any",12,27,10,15,10,12,14,16,30,1,0,1
+"264","Steam Mephit","Small","Elemental","Neutral Evil",10,21,5,11,10,11,10,12,30,1,0,0.25
+"265","Stirge","Tiny","Beast","Unaligned",14,2,4,16,11,2,8,6,10,0,0,0.125
+"266","Stone Giant","Huge","Giant","True Neutral",17,126,23,15,20,10,12,9,40,1,0,7
+"267","Stone Golem","Large","Construct","Unaligned",17,178,22,9,20,3,11,1,30,1,0,10
+"268","Storm Giant","Huge","Giant","Chaotic Good",16,230,29,14,20,16,18,18,50,1,0,13
+"269","Succubus","Medium","Fiend (shapechanger)","Neutral Evil",15,66,8,17,13,15,12,20,30,1,0,4
+"270","Succubus (Incubus)","Medium","Fiend (shapechanger)","Neutral Evil",15,66,8,17,13,15,12,20,30,1,0,4
+"271","Swarm Of Bats","Medium","Swarm of tiny beasts","Unaligned",12,22,5,15,10,2,12,4,0,0,0,0.25
+"272","Swarm Of Beetles","Medium","Swarm of tiny beasts","Unaligned",12,22,3,13,10,1,7,1,20,0,0,0.5
+"273","Swarm Of Centipedes","Medium","Swarm of tiny beasts","Unaligned",12,22,3,13,10,1,7,1,20,0,0,0.5
+"274","Swarm Of Insects","Medium","Swarm of tiny beasts","Unaligned",12,22,3,13,10,1,7,1,20,0,0,0.5
+"275","Swarm Of Poisonous Snakes","Medium","Swarm of tiny beasts","Unaligned",14,36,8,18,11,1,10,3,30,0,0,2
+"276","Swarm Of Quippers","Medium","Swarm of tiny beasts","Unaligned",13,28,13,16,9,1,7,2,0,0,0,1
+"277","Swarm Of Rats","Medium","Swarm of tiny beasts","Unaligned",10,24,9,11,9,2,10,3,30,0,0,0.25
+"278","Swarm Of Ravens","Medium","Swarm of tiny beasts","Unaligned",12,24,6,14,8,3,12,6,10,0,0,0.25
+"279","Swarm Of Spiders","Medium","Swarm of tiny beasts","Unaligned",12,22,3,13,10,1,7,1,20,0,0,0.5
+"280","Swarm Of Wasps","Medium","Swarm of tiny beasts","Unaligned",12,22,3,13,10,1,7,1,5,0,0,0.5
+"281","Tarrasque","Gargantuan","Monstrosity (titan)","Unaligned",25,676,30,11,30,3,11,11,40,0,1,30
+"282","Thug","Medium","Humanoid (any race)","Non-Good",11,32,15,11,14,10,10,11,30,1,0,0.5
+"283","Tiger","Large","Beast","Unaligned",12,37,17,15,14,3,12,8,40,0,0,1
+"284","Treant","Huge","Plant","Chaotic Good",16,138,23,8,21,12,16,12,30,1,0,9
+"285","Tribal Warrior","Medium","Humanoid (any race)","Any",12,11,13,11,12,8,11,8,30,1,0,0.125
+"286","Triceratops","Huge","Beast","Unaligned",13,95,22,9,17,2,11,5,50,0,0,5
+"287","Troll","Large","Giant","Chaotic Evil",15,84,18,13,20,7,9,7,30,1,0,5
+"288","Tyrannosaurus Rex","Huge","Beast","Unaligned",13,136,25,10,19,2,12,9,50,0,0,8
+"289","Unicorn","Large","Celestial","Lawful Good",12,67,18,14,15,11,17,16,50,1,1,5
+"290","Vampire","Medium","Undead (shapechanger)","Lawful Evil",16,144,18,18,18,17,15,18,30,1,1,13
+"291","Vampire Spawn","Medium","Undead","Neutral Evil",15,82,16,16,16,11,10,12,30,1,0,5
+"292","Veteran","Medium","Humanoid (any race)","Any",17,58,16,13,14,10,11,10,30,1,0,3
+"293","Violet Fungus","Medium","Plant","Unaligned",5,18,3,1,10,1,3,1,5,0,0,0.25
+"294","Vrock","Large","Fiend (demon)","Chaotic Evil",15,104,17,15,18,8,13,8,40,1,0,6
+"295","Vulture","Medium","Beast","Unaligned",10,5,7,10,13,2,12,4,10,0,0,0
+"296","Warhorse","Large","Beast","Unaligned",11,19,18,12,13,2,12,7,60,0,0,0.5
+"297","Warhorse Skeleton","Large","Undead","Lawful Evil",13,22,18,12,15,2,8,5,60,0,0,0.5
+"298","Water Elemental","Large","Elemental","True Neutral",14,114,18,14,18,5,10,8,30,1,0,5
+"299","Weasel","Tiny","Beast","Unaligned",13,1,3,16,8,2,12,3,30,0,0,0
+"300","Werebear","Medium","Humanoid (human shapechanger)","Neutral Good",10,135,19,10,17,11,12,12,30,1,0,5
+"301","Wereboar","Medium","Humanoid (human shapechanger)","Neutral Evil",10,78,17,10,15,10,11,8,30,1,0,4
+"302","Wererat","Medium","Humanoid (human shapechanger)","Lawful Evil",12,33,10,15,12,11,10,8,30,1,0,2
+"303","Weretiger","Medium","Humanoid (human shapechanger)","True Neutral",12,120,17,15,16,10,13,11,30,1,0,4
+"304","Werewolf","Medium","Humanoid (human shapechanger)","Chaotic Evil",11,58,15,13,14,10,11,10,30,1,0,3
+"305","White Dragon Wyrmling","Medium","Dragon","Chaotic Evil",16,32,14,10,14,5,10,11,30,1,0,2
+"306","Wight","Medium","Undead","Neutral Evil",14,45,15,14,16,10,13,15,30,1,0,3
+"307","Will-O'-Wisp","Tiny","Undead","Chaotic Evil",19,22,1,28,10,13,14,11,0,1,0,2
+"308","Winter Wolf","Large","Monstrosity","Neutral Evil",13,75,18,13,14,7,12,8,50,1,0,3
+"309","Wolf","Medium","Beast","Unaligned",13,11,12,15,12,3,12,6,40,0,0,0.25
+"310","Worg","Large","Monstrosity","Neutral Evil",13,26,16,13,13,7,11,8,50,1,0,0.5
+"311","Wraith","Medium","Undead","Neutral Evil",13,67,6,16,16,12,14,15,0,1,0,5
+"312","Wyvern","Large","Dragon","Unaligned",13,110,19,10,16,5,12,6,20,0,0,6
+"313","Xorn","Medium","Elemental","True Neutral",19,73,17,10,22,11,10,11,20,1,0,5
+"314","Young Black Dragon","Large","Dragon","Chaotic Evil",18,127,19,14,17,12,11,15,40,1,0,7
+"315","Young Blue Dragon","Large","Dragon","Lawful Evil",18,152,21,10,19,14,13,17,40,1,0,9
+"316","Young Brass Dragon","Large","Dragon","Chaotic Good",17,110,19,10,17,12,11,15,40,1,0,6
+"317","Young Bronze Dragon","Large","Dragon","Lawful Good",18,142,21,10,19,14,13,17,40,1,0,8
+"318","Young Copper Dragon","Large","Dragon","Chaotic Good",17,119,19,12,17,16,13,15,40,1,0,7
+"319","Young Gold Dragon","Large","Dragon","Lawful Good",18,178,23,14,21,16,13,20,40,1,0,10
+"320","Young Green Dragon","Large","Dragon","Lawful Evil",18,136,19,12,17,16,13,15,40,1,0,8
+"321","Young Red Dragon","Large","Dragon","Chaotic Evil",18,178,23,10,21,14,11,19,40,1,0,10
+"322","Young Silver Dragon","Large","Dragon","Lawful Good",18,168,23,10,21,14,11,19,40,1,0,9
+"323","Young White Dragon","Large","Dragon","Chaotic Evil",17,133,18,10,18,6,11,12,40,1,0,6
+"324","Zombie","Medium","Undead","Neutral Evil",8,22,13,6,16,3,6,5,20,1,0,0.25

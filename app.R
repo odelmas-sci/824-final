@@ -34,7 +34,7 @@ dat$Alignment <- factor(dat$Alignment,levels = alignment_levels,ordered = TRUE)
 
 # Build Prediction Challenge Rating
 cr_model <- lm(Challenge_Rating~Armor_Class+Hit_Points+Strength+Dexterity+Constitution+Intelligence+
-                 Wisdom+Charisma+Speed+Speaks_Language, data=dat)
+                 Wisdom+Charisma+Speed+Speaks_Language+Legendary_Creature, data=dat)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -90,14 +90,15 @@ ui <- fluidPage(
                       verbatimTextOutput("dangerAssessment"),
                       dataTableOutput("monsterDetails")
                ),
-               pickerInput("monster_filter", "Select Monster:",
+               pickerInput("monster_filter2", "Select Monster:",
                            choices = sort(unique(dat$Monster)),
                            selected = unique(dat$Monster),
                            multiple = FALSE,
                            options = list(`actions-box` = TRUE, `live-search` = TRUE))
              )
-    ) # end tab2
-    
+    ), # end tab2
+    tabPanel("Tab 3"
+    ) # end Tab 3
   ) # tabsetPanel end
 ) # ui end end
 
@@ -144,12 +145,32 @@ server <- function(input, output, session) {
       mutate(PredictedCR = predict(cr_model, newdata = .))
   })
   
+  # Tab1 Plot
+  output$comparisonPlot <- renderPlot({
+    df <- filtered_data()
+    
+    ggplot(df, aes(x = Challenge_Rating, y = PredictedCR, size = as.factor(Size))) +
+      geom_point(shape = 21, alpha = 0.5 ,fill = "lightblue3", color="black") +
+      geom_text(aes(label = Monster), hjust = -0.1, vjust = 0.5, size = 3) +
+      geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red") +
+      coord_cartesian(xlim=c(0,30), ylim=c(0,30))+
+      labs(title = "Predicted vs Actual Challenge Ratings",
+           x = "Actual CR", y = "Predicted CR", size = "Monster Size") +
+      theme_minimal()
+  })
+  
+  # Tab1 Table
+  output$monsterTable <- renderDataTable({
+    filtered_data() %>%
+      select(Monster, Size, Type, Alignment, Challenge_Rating, PredictedCR)
+  })
+  
   # Tab 2: Select monsters
   selected_monsters <- reactive({
-    req(input$monster_filter)
+    req(input$monster_filter2)
     
     dat %>%
-      filter(Monster %in% input$monster_filter) %>%
+      filter(Monster %in% input$monster_filter2) %>%
       mutate(PredictedCR = predict(cr_model, newdata = .))
   })
   
@@ -165,25 +186,7 @@ server <- function(input, output, session) {
     updatePickerInput(session, "monster_filter", selected = "")
   })
   
-  # Tab1 Plot
-  output$comparisonPlot <- renderPlot({
-    df <- filtered_data()
-    
-    ggplot(df, aes(x = Challenge_Rating, y = PredictedCR, size = as.factor(Size))) +
-      geom_point(shape = 21, alpha = 0.5, fill = "lightblue3", color="black") +
-      geom_text(aes(label = Monster), hjust = -0.1, vjust = 0.5, size = 3) +
-      geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red") +
-      labs(title = "Predicted vs Actual Challenge Ratings",
-           x = "Actual CR", y = "Predicted CR", size = "Monster Size") +
-      theme_minimal()
-  })
-  
-  # Tab1 Table
-  output$monsterTable <- renderDataTable({
-    filtered_data()
-  })
-  
-  # Tab 2: Danger Assessment
+  # Tab 2: Output
   
   output$dangerAssessment <- renderText({
     df <- selected_monsters()
@@ -202,6 +205,21 @@ server <- function(input, output, session) {
       "Players likely to survive!"
     }
   })
+  
+  # Tab 3: 
+  output$comparisonPlot <- renderPlot({
+    df <- filtered_data()
+    
+    ggplot(df, aes(x = Challenge_Rating, y = PredictedCR, size = as.factor(Size))) +
+      geom_point(shape = 21, alpha = 0.5 ,fill = "lightblue3", color="black") +
+      geom_text(aes(label = Monster), hjust = -0.1, vjust = 0.5, size = 3) +
+      geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red") +
+      coord_cartesian(xlim=c(0,30), ylim=c(0,30))+
+      labs(title = "Predicted vs Actual Challenge Ratings",
+           x = "Actual CR", y = "Predicted CR", size = "Monster Size") +
+      theme_minimal()
+  })
+  
   
 } # end server
 

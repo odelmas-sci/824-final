@@ -1,38 +1,5 @@
-#####################
-# LOAD DATASET HERE #
-#####################
-monster <- read.csv("monsters_cleaned.csv", header = TRUE, row.names = 1, 
-                    col.names = c("Monster", "Size", "Type","Alignment","Armor_Class", "Hit_Points","Strength", "Dexterity",
-                                  "Constitution", "Intelligence", "Wisdom", "Charisma", "Speed", 
-                                  "Speaks_Language", "Legendary_Creature","Challenge_Rating"))
-
-cr_model <- lm(Challenge_Rating~Armor_Class+Hit_Points+Strength+Dexterity+Constitution+Intelligence+
-                 Wisdom+Charisma+Speed+Speaks_Language, data=monster)
-
-mons <- monster %>% 
-  mutate(PredictedCR = predict(cr_model, newdata = .))
-
-mons %>%
-  ggplot(aes(x = Challenge_Rating, y = PredictedCR, size = as.factor(Size))) +
-  geom_point(shape = 21, alpha = 0.5, fill = "lightblue3", color="black") +
-  geom_text(aes(label = Monster), hjust = -0.1, vjust = 0.5, size = 3) +
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red") +
-  labs(title = "Predicted vs Actual Challenge Ratings",
-       x = "Actual CR", y = "Predicted CR", size = "Monster Size") +
-  theme_minimal()
-
-mons %>%
-  ggplot(aes(x = Challenge_Rating, y = PredictedCR)) +
-  facet_wrap(~Alignment)+
-  geom_point(shape = 21, alpha = 0.5, fill = "lightblue3", color="black") +
-  geom_text(aes(label = Monster), hjust = -0.1, vjust = 0.5, size = 3) +
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red") +
-  labs(title = "Predicted vs Actual Challenge Ratings",
-       x = "Actual CR", y = "Predicted CR", size = "Monster Size") +
-  theme_minimal()
-
 ###################################
-# REMEMBER: DO NOT RUN WHOLE CODE #
+#         CLEAN UP PROCESS        #
 ###################################
 
 # Monsters of D&D

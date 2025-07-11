@@ -43,6 +43,8 @@ ui <- fluidPage(
   
   tabsetPanel(
     
+    # Tab 1
+    
     tabPanel("Explore Your Monsters",
      sidebarLayout(
        sidebarPanel(
@@ -85,20 +87,53 @@ ui <- fluidPage(
                       numericInput("player_level", "Player Level (1–20):", value = 1, min = 1, max = 20),
                       numericInput("num_monsters", "Number of Monsters:", value = 1, min = 1, max = 50),
                       actionButton("reset_encounter", "Reset")
-               ),
+               
+                      ),
                column(8,
                       verbatimTextOutput("dangerAssessment"),
                       dataTableOutput("monsterDetails")
-               ),
+               
+                      ),
                pickerInput("monster_filter2", "Select Monster:",
                            choices = sort(unique(dat$Monster)),
                            selected = unique(dat$Monster),
                            multiple = FALSE,
                            options = list(`actions-box` = TRUE, `live-search` = TRUE))
+             
+               )
+    
+             ), # end Tab 2
+    
+    # Tab 3
+    
+    tabPanel("Build Your Ideal Monster",
+             tabPanel("Monster Match Finder",
+                      sidebarLayout(
+                        sidebarPanel(
+                          numericInput("input_ac", "Armor Class (1-30)", value = 15, min = 1, max = 30),
+                          numericInput("input_hp", "Hit Points (1-700)", value = 50, min = 1, max = 700),
+                          numericInput("input_str", "Strength (1-30)", value = 10, min = 1, max = 30),
+                          numericInput("input_dex", "Dexterity (1-30)", value = 10, min = 1, max = 30),
+                          numericInput("input_con", "Constitution (1-30)", value = 10, min = 1, max = 30),
+                          numericInput("input_int", "Intelligence (1-30)", value = 10, min = 1, max = 30),
+                          numericInput("input_wis", "Wisdom (1-30)", value = 10, min = 1, max = 30),
+                          numericInput("input_cha", "Charisma (1-30)", value = 10, min = 1, max = 30),
+                          sliderInput("input_speed", "Speed", min = 10, max = 120, value = 30, step = 10),
+                          checkboxInput("input_language", "Understands Language", value = TRUE),
+                          checkboxInput("input_legend", "Legendary Creature", value=FALSE),
+                          actionButton("match_button", "Find Matching Monsters")
+                        ),
+                        mainPanel(
+                          verbatimTextOutput("predicted_cr"),
+                          dataTableOutput("matching_monsters"),
+                          h4("Selected Monster Details"),
+                          verbatimTextOutput("selected_monster_info")
+                        )
+                      )
              )
-    ), # end tab2
-    tabPanel("Tab 3"
-    ) # end Tab 3
+    
+             ) # end Tab 3
+  
   ) # tabsetPanel end
 ) # ui end end
 
@@ -199,25 +234,82 @@ server <- function(input, output, session) {
     players_power <- input$num_players * input$player_level
     monsters_power <- input$num_monsters * avg_cr
     
-    if (players_power < monsters_power) {
-      "***Players likely to die or be seriously maimed***"
+    if (players_power < 0.5*monsters_power) {
+      "***Players likely to die or be cricitically injured***"
+    } else if (players_power < 0.75*monsters_power) {
+      "**Players face a tough fight — outcome uncertain**"
     } else {
       "Players likely to survive!"
     }
   })
   
   # Tab 3: 
-  output$comparisonPlot <- renderPlot({
-    df <- filtered_data()
+  
+  # Reactive: build a data frame from the user's input
+  user_input <- reactive({
+    data.frame(
+      Armor_Class = input$input_ac,
+      Hit_Points = input$input_hp,
+      Strength = input$input_str,
+      Dexterity = input$input_dex,
+      Constitution = input$input_con,
+      Intelligence = input$input_int,
+      Wisdom = input$input_wis,
+      Charisma = input$input_cha,
+      Speed = input$input_speed,
+      Speaks_Language = as.numeric(input$input_language),
+      Legendary_Creature = as.numeric(input$input_legend)
+    )
+  })
+  
+  # Reactive: predict CR based on user input
+  predicted_cr <- eventReactive(input$match_button, {
+    predict(cr_model, newdata = user_input())
+  })
+  
+  # Output predicted CR
+  output$predicted_cr <- renderPrint({
+    req(predicted_cr())
+    paste0("Predicted Challenge Rating of your Monster: ", round(predicted_cr(), 2))
+  })
+  
+  # Find closest matches from dataset
+  output$matching_monsters <- DT::renderDataTable({
+    req(predicted_cr())
     
-    ggplot(df, aes(x = Challenge_Rating, y = PredictedCR, size = as.factor(Size))) +
-      geom_point(shape = 21, alpha = 0.5 ,fill = "lightblue3", color="black") +
-      geom_text(aes(label = Monster), hjust = -0.1, vjust = 0.5, size = 3) +
-      geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red") +
-      coord_cartesian(xlim=c(0,30), ylim=c(0,30))+
-      labs(title = "Predicted vs Actual Challenge Ratings",
-           x = "Actual CR", y = "Predicted CR", size = "Monster Size") +
-      theme_minimal()
+    target_cr <- predicted_cr()
+    
+    dat %>%
+      mutate(PredictedCR = predict(cr_model, newdata = .),
+             Diff = abs(PredictedCR - target_cr)) %>%
+      arrange(Diff) %>%
+      select(Monster, Type, Alignment, Size, Challenge_Rating, PredictedCR, Diff) %>%
+      head(10)
+  }, selection = "single")
+  
+  # Selection of Monsters when Row is selected
+  output$selected_monster_info <- renderPrint({
+    selected <- input$matching_monsters_rows_selected
+    if (is.null(selected)) {
+      return("Select a monster above to view full stats.")
+    }
+    
+    # Get the matching table (must match the one in renderDataTable)
+    matching_df <- dat %>%
+      mutate(PredictedCR = predict(cr_model, newdata = .),
+             Diff = abs(PredictedCR - predicted_cr())) %>%
+      arrange(Diff) %>%
+      select(Monster, Type, Alignment, Size, Challenge_Rating, PredictedCR, Diff) %>%
+      head(10)
+    
+    # Get selected monster name
+    selected_monster <- matching_df$Monster[selected]
+    
+    # Lookup full info
+    full_info <- dat %>% filter(Monster == selected_monster)
+    
+    # Show full stats
+    as.list(full_info)
   })
   
   

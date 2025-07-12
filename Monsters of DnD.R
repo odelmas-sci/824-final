@@ -89,14 +89,18 @@ alignment_levels <- c(
 )
 
 monster$alignment <- factor(monster$alignment,
-                                  levels = alignment_levels,
-                                  ordered = TRUE)
+                            levels = alignment_levels,
+                            ordered = TRUE)
 
 #### Size ####
 unique(monster$size)
 
 #### Monster_type ####
 unique(monster$monster_type)
+monster$monster_type <- gsub("^Humanoid\\s*\\(.*\\)", "Humanoid", monster$monster_type)
+monster$monster_type <- gsub("^Fiend\\s*\\(.*\\)", "Fiend", monster$monster_type)
+monster$monster_type <- gsub("^Undead\\s*\\(.*\\)", "Undead", monster$monster_type)
+monster$monster_type <- gsub("^Monstrosity\\s*\\(.*\\)", "Monstrosity", monster$monster_type)
 
 #### AC and HP ####
 summary(monster$ac)
@@ -115,6 +119,5 @@ summary(monster$cha)
 
 #### Speed ####
 summary(monster$speed)
-
 
 write.csv(monster, file="C:/Documents/Applied Stats/DATA 824 Data Viz/Assignments/Final project/Final-project/monsters_cleaned.csv", row.names = TRUE)

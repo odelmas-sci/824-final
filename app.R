@@ -12,6 +12,7 @@ library(dplyr)
 library(ggplot2)
 library(shinyWidgets)
 library(plotly)
+library(DT)
 
 # Read the CSV file
 dat <- read.csv("monsters_cleaned.csv", header = TRUE, row.names = 1, 
@@ -20,18 +21,6 @@ dat <- read.csv("monsters_cleaned.csv", header = TRUE, row.names = 1,
                               "Speaks_Language", "Legendary_Creature","Challenge_Rating"))
 
 dat$Size <- factor(dat$Size, levels = c("Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"), ordered = TRUE)
-dat$Type <- trimws(dat$Type)
-dat$Type <- as.factor(dat$Type)
-
-alignment_levels <- c(
-  "Lawful Good", "Neutral Good", "Chaotic Good",
-  "Lawful Neutral", "True Neutral", "Chaotic Neutral",
-  "Lawful Evil", "Neutral Evil", "Chaotic Evil",
-  "Unaligned", "Any", "Evil (unspecified)", "Chaotic (unspecified)",
-  "Non-Good", "Non-Lawful", "Neutral (Good or Evil)", "Other"
-)
-
-dat$Alignment <- factor(dat$Alignment,levels = alignment_levels,ordered = TRUE)
 
 # Build Prediction Challenge Rating
 cr_model <- lm(Challenge_Rating~Armor_Class+Hit_Points+Strength+Dexterity+Constitution+Intelligence+
@@ -44,7 +33,7 @@ ui <- fluidPage(
   
   tabsetPanel(
     
-    # Tab 1
+    # Tab 1 ####
     
     tabPanel("Explore Your Monsters",
      sidebarLayout(
@@ -81,7 +70,7 @@ ui <- fluidPage(
      )
     ), # end Tab1
     
-    # Tab 2
+    # Tab 2 ####
     
     tabPanel("Predictor Explorer",
              fluidRow(
@@ -100,43 +89,54 @@ ui <- fluidPage(
                )
              ), # end Tab 2
     
-    # Tab 3
+    # Tab 3 ####
     
-    tabPanel("Build Your Ideal Monster",
+    tabPanel("PCA by Monster Type",
              tabPanel("Monster Match Finder",
                       sidebarLayout(
                         sidebarPanel(
-                          numericInput("input_ac", "Armor Class (1-30)", value = 15, min = 1, max = 30),
-                          numericInput("input_hp", "Hit Points (1-700)", value = 50, min = 1, max = 700),
-                          numericInput("input_str", "Strength (1-30)", value = 10, min = 1, max = 30),
-                          numericInput("input_dex", "Dexterity (1-30)", value = 10, min = 1, max = 30),
-                          numericInput("input_con", "Constitution (1-30)", value = 10, min = 1, max = 30),
-                          numericInput("input_int", "Intelligence (1-30)", value = 10, min = 1, max = 30),
-                          numericInput("input_wis", "Wisdom (1-30)", value = 10, min = 1, max = 30),
-                          numericInput("input_cha", "Charisma (1-30)", value = 10, min = 1, max = 30),
-                          sliderInput("input_speed", "Speed", min = 10, max = 120, value = 30, step = 10),
-                          checkboxInput("input_language", "Understands Language", value = TRUE),
-                          checkboxInput("input_legend", "Legendary Creature", value=FALSE),
-                          actionButton("match_button", "Find Matching Monsters")
+                          selectInput("pca_type", "Select Monster Type:",
+                                      choices = sort(unique(dat$Type)),
+                                      selected = unique(dat$Type)[1])
                         ),
                         mainPanel(
-                          verbatimTextOutput("predicted_cr"),
-                          dataTableOutput("matching_monsters"),
+                          plotOutput("pcaPlot", height = "600px")
+                        )
+                      )
+                      
+             )
+    
+             ), # end Tab 3
+    
+    # Tab 4 ####
+    
+    tabPanel("Search for Monsters",
+             tabPanel("Monster Finder",
+                      sidebarLayout(
+                        sidebarPanel(
+                          textInput("search_monster", "Search by Monster Name:", placeholder = "Enter name..."),
+                          selectInput("search_type", "Filter by Type:",
+                                      choices = c("All", sort(unique(as.character(dat$Type)))),
+                                      selected = "All")
+                        ),
+                        mainPanel(
+                          h4("Matching Monsters"),
+                          dataTableOutput("search_results"),
                           h4("Selected Monster Details"),
                           verbatimTextOutput("selected_monster_info")
                         )
                       )
              )
-    
-             ) # end Tab 3
-  
+             
+    ) # end Tab 4
   ) # tabsetPanel end
 ) # ui end end
 
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
   
-  # Tab 1: Reset
+  # Tab 1: ####
+  #Reset
   observeEvent(input$clear_all, {
     updateSliderInput(session, "CR_slider", value = c(min(dat$Challenge_Rating), max(dat$Challenge_Rating)))
     updateSliderInput(session, "Hit_Points", value = c(min(dat$Hit_Points), max(dat$Hit_Points)))
@@ -211,7 +211,7 @@ server <- function(input, output, session) {
       select(Monster, Size, Type, Alignment, Challenge_Rating, PredictedCR)
   })
   
-  # Tab 2: Output
+  # Tab 2: ####
   
   output$predictorPlot <- renderPlot({
     predictor <- input$predictor_choice
@@ -233,72 +233,81 @@ server <- function(input, output, session) {
       theme_minimal()
   })
   
-  # Tab 3: 
+  # Tab 3: ####
+  
+  output$pcaPlot <- renderPlot({
+    req(input$pca_type)
+    
+    # Filter data by selected type
+    df <- dat %>% filter(Type == input$pca_type)
+    
+    # Select numeric predictors
+    pca_data <- df %>%
+      select(Hit_Points, Armor_Class, Strength, Dexterity, Constitution,
+             Intelligence, Wisdom, Charisma, Speed, Speaks_Language, Legendary_Creature)
+    
+    # Remove columns with zero variance
+    pca_data <- pca_data[, sapply(pca_data, function(x) length(unique(x)) > 1)]
+    
+    # Run PCA
+    res.PCA <- prcomp(pca_data, center = TRUE, scale. = TRUE)
+    
+    # Add monster names as rownames
+    rownames(pca_data) <- df$Monster
+    
+    # Plot PCA
+    plot(res.PCA$x[, 1:2],
+         pch = 19,
+         col = "steelblue",
+         xlab = "PC1",
+         ylab = "PC2",
+         main = paste("PCA of", input$pca_type))
+    
+    # Add monster names as text
+    text(res.PCA$x[, 1:2],
+         labels = rownames(pca_data),
+         pos = 3,
+         cex = 0.8)
+  })
+  
+  # Tab 4: ####
   
   # Reactive: build a data frame from the user's input
-  user_input <- reactive({
-    data.frame(
-      Armor_Class = input$input_ac,
-      Hit_Points = input$input_hp,
-      Strength = input$input_str,
-      Dexterity = input$input_dex,
-      Constitution = input$input_con,
-      Intelligence = input$input_int,
-      Wisdom = input$input_wis,
-      Charisma = input$input_cha,
-      Speed = input$input_speed,
-      Speaks_Language = as.numeric(input$input_language),
-      Legendary_Creature = as.numeric(input$input_legend)
-    )
-  })
-  
-  # Reactive: predict CR based on user input
-  predicted_cr <- eventReactive(input$match_button, {
-    predict(cr_model, newdata = user_input())
-  })
-  
-  # Output predicted CR
-  output$predicted_cr <- renderPrint({
-    req(predicted_cr())
-    paste0("Predicted Challenge Rating of your Monster: ", round(predicted_cr(), 2))
-  })
-  
-  # Find closest matches from dataset
-  output$matching_monsters <- DT::renderDataTable({
-    req(predicted_cr())
+  matching_monsters <- reactive({
+    df <- dat
     
-    target_cr <- predicted_cr()
+    # Filter by name
+    if (input$search_monster != "") {
+      df <- df %>% filter(grepl(input$search_monster, Monster, ignore.case = TRUE))
+    }
     
-    dat %>%
-      mutate(PredictedCR = predict(cr_model, newdata = .),
-             Diff = abs(PredictedCR - target_cr)) %>%
-      arrange(Diff) %>%
-      select(Monster, Type, Alignment, Size, Challenge_Rating, PredictedCR, Diff) %>%
-      head(10)
+    # Filter by type
+    if (input$search_type != "All") {
+      df <- df %>% filter(Type == input$search_type)
+    }
+    
+    df %>%
+      select(Monster, Type, Alignment, Size, Challenge_Rating)
+  })
+  
+  # Render table with row selection
+  output$search_results <- DT::renderDataTable({
+    matching_monsters()
   }, selection = "single")
   
-  # Selection of Monsters when Row is selected
+  # Show full monster info when selected
   output$selected_monster_info <- renderPrint({
-    selected <- input$matching_monsters_rows_selected
+    selected <- input$search_results_rows_selected
     if (is.null(selected)) {
       return("Select a monster above to view full stats.")
     }
     
-    # Get the matching table (must match the one in renderDataTable)
-    matching_df <- dat %>%
-      mutate(PredictedCR = predict(cr_model, newdata = .),
-             Diff = abs(PredictedCR - predicted_cr())) %>%
-      arrange(Diff) %>%
-      select(Monster, Type, Alignment, Size, Challenge_Rating, PredictedCR, Diff) %>%
-      head(10)
-    
     # Get selected monster name
-    selected_monster <- matching_df$Monster[selected]
+    selected_monster <- matching_monsters()$Monster[selected]
     
-    # Lookup full info
+    # Lookup full info in original data
     full_info <- dat %>% filter(Monster == selected_monster)
     
-    # Show full stats
     as.list(full_info)
   })
   

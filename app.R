@@ -35,6 +35,25 @@ ui <- fluidPage(
     
     # Tab 1 ####
     
+    tabPanel("Predictor Explorer",
+             fluidRow(
+               sidebarLayout(
+                 sidebarPanel(
+                   selectInput("predictor_choice", "Select a Predictor:",
+                               choices = c("Armor_Class", "Hit_Points", "Strength", "Dexterity", 
+                                           "Constitution", "Intelligence", "Wisdom", "Charisma", 
+                                           "Speed", "Speaks_Language", "Legendary_Creature"),
+                               selected = "Armor_Class")
+                 ),
+                 mainPanel(
+                   plotOutput("predictorPlot", height="600px")
+                 )
+               )
+             )
+    ), # end Tab 1
+    
+    # Tab 2 ####
+    
     tabPanel("Explore Your Monsters",
      sidebarLayout(
        sidebarPanel(
@@ -68,26 +87,9 @@ ui <- fluidPage(
          dataTableOutput("monsterTable")
       )
      )
-    ), # end Tab1
+    ), # end Tab 2
     
-    # Tab 2 ####
     
-    tabPanel("Predictor Explorer",
-             fluidRow(
-               sidebarLayout(
-                 sidebarPanel(
-                   selectInput("predictor_choice", "Select a Predictor:",
-                               choices = c("Armor_Class", "Hit_Points", "Strength", "Dexterity", 
-                                           "Constitution", "Intelligence", "Wisdom", "Charisma", 
-                                           "Speed", "Speaks_Language", "Legendary_Creature"),
-                               selected = "Armor_Class")
-                   ),
-                 mainPanel(
-                   plotOutput("predictorPlot", height="600px")
-                   )
-                 )
-               )
-             ), # end Tab 2
     
     # Tab 3 ####
     
@@ -136,6 +138,28 @@ ui <- fluidPage(
 server <- function(input, output, session) {
   
   # Tab 1: ####
+  
+  output$predictorPlot <- renderPlot({
+    predictor <- input$predictor_choice
+    df <- dat 
+    
+    ggplot(df, aes_string(x = predictor, y = "Challenge_Rating")) +
+      geom_point(shape = 21, alpha = 0.5, fill = "steelblue", color = "black") +
+      geom_smooth(method = "lm", se = FALSE, color = "red", linetype = "dashed") +
+      labs(
+        x = predictor,
+        y = "Challenge Rating",
+        title = paste("Relationship between", predictor, "and Challenge Rating")
+      ) +
+      theme(plot.title = element_text(size = 20, face = "bold"),   
+            axis.title = element_text(size = 16),                  
+            axis.text = element_text(size = 14),                   
+            legend.title = element_text(size = 14),
+            legend.text = element_text(size = 12) )+
+      theme_minimal()
+  })
+  
+  # Tab 2: ####
   #Reset
   observeEvent(input$clear_all, {
     updateSliderInput(session, "CR_slider", value = c(min(dat$Challenge_Rating), max(dat$Challenge_Rating)))
@@ -153,7 +177,7 @@ server <- function(input, output, session) {
     updateSelectInput(session, "type_filter", selected = unique(dat$Type))
   })
   
-  # Tab 1: Reactive filtered dataset
+  # Tab 2: Reactive filtered dataset
   filtered_data <- reactive({
     req(dat)
     
@@ -179,7 +203,7 @@ server <- function(input, output, session) {
       mutate(PredictedCR = predict(cr_model, newdata = .))
   })
   
-  # Tab1 Plot
+  # Tab 2 Plot
   
   output$comparisonPlot <- renderPlotly({
     df <- filtered_data()
@@ -205,33 +229,12 @@ server <- function(input, output, session) {
     ggplotly(p, tooltip = "text")
   })
   
-  # Tab1 Table
+  # Tab 2 Table
   output$monsterTable <- renderDataTable({
     filtered_data() %>%
       select(Monster, Size, Type, Alignment, Challenge_Rating, PredictedCR)
   })
   
-  # Tab 2: ####
-  
-  output$predictorPlot <- renderPlot({
-    predictor <- input$predictor_choice
-    df <- dat 
-    
-    ggplot(df, aes_string(x = predictor, y = "Challenge_Rating")) +
-      geom_point(shape = 21, alpha = 0.5, fill = "steelblue", color = "black") +
-      geom_smooth(method = "lm", se = FALSE, color = "red", linetype = "dashed") +
-      labs(
-        x = predictor,
-        y = "Challenge Rating",
-        title = paste("Relationship between", predictor, "and Challenge Rating")
-      ) +
-      theme(plot.title = element_text(size = 20, face = "bold"),   
-            axis.title = element_text(size = 16),                  
-            axis.text = element_text(size = 14),                   
-            legend.title = element_text(size = 14),
-            legend.text = element_text(size = 12) )+
-      theme_minimal()
-  })
   
   # Tab 3: ####
   
